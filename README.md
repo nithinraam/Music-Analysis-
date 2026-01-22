@@ -1,16 +1,98 @@
-# React + Vite
+# 🎧 AI Music Recommendation System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack **AI-based Music Recommendation System** with a **ChatGPT-style conversational UI**.  
+Users can chat with the system by typing a song name and receive personalized music recommendations generated using machine learning.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- 💬 ChatGPT-like full-screen chat interface
+- 🎶 Music recommendations based on song similarity
+- 🤖 Machine Learning using cosine similarity
+- ⚡ FastAPI backend for fast API responses
+- 🎨 Modern React + Vite frontend
+- 📊 Dataset enriched with song, artist, genre, and mood
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧠 How It Works
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. User enters a song name in the chat interface.
+2. The backend processes the input using a **content-based filtering algorithm**.
+3. Song features (artist, genre, mood) are vectorized.
+4. **Cosine similarity** is used to find the most similar songs.
+5. The system returns **Top 5 recommended songs with artist names**.
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- React
+- Vite
+- JavaScript
+- CSS (inline styles)
+
+### Backend
+- Python
+- FastAPI
+- Pandas
+- Scikit-learn
+
+### Machine Learning
+- Content-Based Filtering
+- CountVectorizer
+- Cosine Similarity
+
+---
+
+## 📁 Project Structure
+
+Music-Analysis/
+│
+├── backend/
+│ ├── app.py
+│ ├── songs.csv
+│ └── venv/
+│
+├── frontend/
+│ ├── src/
+│ │ └── App.jsx
+│ ├── package.json
+│ └── vite.config.js
+│
+└── README.md
+
+
+---
+
+## ▶️ How to Run the Project
+
+### 1️⃣ Start Backend (FastAPI)
+
+```bash
+cd backend
+uvicorn app:app --reload
+http://127.0.0.1:8000
+
+
+cd frontend
+npm install
+npm run dev
+
+http://localhost:5173
+
+💡 Example Interaction
+
+User:
+Believer
+
+AI Response:
+🎵 Thunder — Imagine Dragons
+🎵 Radioactive — Imagine Dragons
+🎵 Enemy — Imagine Dragons
+🎵 Natural — Imagine Dragons
+🎵 Whatever It Takes — Imagine Dragons
+
+
